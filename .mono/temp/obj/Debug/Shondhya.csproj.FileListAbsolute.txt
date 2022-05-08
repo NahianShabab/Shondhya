@@ -1,0 +1,9 @@
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.csproj.AssemblyReference.cache
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.GeneratedMSBuildEditorConfig.editorconfig
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.AssemblyInfoInputs.cache
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.AssemblyInfo.cs
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.csproj.CoreCompileInputs.cache
+F:\Godot Projects\Shondhya\.mono\temp\bin\Debug\Shondhya.dll
+F:\Godot Projects\Shondhya\.mono\temp\bin\Debug\Shondhya.pdb
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.dll
+F:\Godot Projects\Shondhya\.mono\temp\obj\Debug\Shondhya.pdb
