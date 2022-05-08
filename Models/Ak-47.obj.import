@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Ak-47.obj-3eb9c6dcef8cfa6faf1538bb77c5bdb2.mesh"
+
+[deps]
+
+files=[ "res://.import/Ak-47.obj-3eb9c6dcef8cfa6faf1538bb77c5bdb2.mesh" ]
+
+source_file="res://Models/Ak-47.obj"
+dest_files=[ "res://.import/Ak-47.obj-3eb9c6dcef8cfa6faf1538bb77c5bdb2.mesh", "res://.import/Ak-47.obj-3eb9c6dcef8cfa6faf1538bb77c5bdb2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

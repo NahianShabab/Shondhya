@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Assault.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -17,3 +18,13 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 8.74228e-08, -5.0822e-21, 8.74228e-08, 1, -8.74228e-08, -7.64274e-15, -8.74228e-08, -1, 0, 1, 1 )
+current = true
+far = 8192.0
+
+[node name="WeaponPoint" type="Spatial" parent="Camera"]
+transform = Transform( -1, 8.74228e-08, -7.64274e-15, 8.74228e-08, 1, -8.74228e-08, -5.0822e-21, -8.74228e-08, -1, 0.438, -0.6, 0.136 )
+
+[node name="Assault" parent="Camera/WeaponPoint" instance=ExtResource( 2 )]
