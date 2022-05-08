@@ -1,17 +1,31 @@
 extends KinematicBody
 var velocity=Vector3.ZERO;
 var upDirection=Vector3(0,1,0);
-var moveSpeed=25;
+var moveSpeed=15;
 var airMoveSpeed=10;
 var gravity=9.8;
 var airFriction=3;
 var jumpVelocity=5;
+var mouseRelative=Vector2();
+var lookSensitivity=0.8;
+var maxLookAngle=90;
+var minLookAngle=-90;
+
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 	pass 
 
 func _process(delta):
+	if Input.is_action_pressed("Exit"):
+		get_tree().quit(0);
 	if Input.is_action_pressed("Fire"):
+		#TODO : fire
 		$Camera/WeaponPoint/Assault.fire();
+	#TODO: add ammo info 
+	#$CanvasLayer/RichTextLabel.text=str($Camera/WeaponPoint/Assault.ammo);
+	$UI/AmmoText.text=str($Camera/WeaponPoint/Assault.ammo);
+	
+	rotatePlayer(delta);
 	pass
 	
 func _physics_process(delta):
@@ -44,7 +58,24 @@ func _physics_process(delta):
 		velocity.z=lerp(velocity.z,0,airFriction*delta);
 	velocity.y-=(gravity*delta);
 	velocity=move_and_slide(velocity,upDirection);
-	print(velocity);
+	#print(velocity);
 		
 func _input(event):
+	if event is InputEventMouseMotion:
+		mouseRelative=event.relative;
 	pass
+	
+func rotatePlayer(delta):
+	var xMove=mouseRelative.x;
+	var yMove=mouseRelative.y;
+	#move up/down the camera
+	var cameraRotationDegree=yMove*lookSensitivity;
+	#$Camera.rotate_x(deg2rad(clamp(cameraRotationDegree,minLookAngle,maxLookAngle)));
+	$Camera.rotation_degrees.x=clamp($Camera.rotation_degrees.x-cameraRotationDegree,minLookAngle,maxLookAngle);
+	
+	#rotate the player 
+	var playerRotationDegree=-xMove*lookSensitivity;
+	rotate_y(deg2rad(playerRotationDegree));
+	#if(xMove!=0):
+		#print(rotation_degrees.y);
+	mouseRelative=Vector2();

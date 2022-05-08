@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Weapons/Assault.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/EternalUIRegular.tres" type="DynamicFont" id=3]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -20,7 +21,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 8.74228e-08, -5.0822e-21, 8.74228e-08, 1, -8.74228e-08, -7.64274e-15, -8.74228e-08, -1, 0, 1, 1 )
+transform = Transform( -1, 8.74228e-08, -5.0822e-21, 8.74228e-08, 1, -8.74228e-08, -7.64274e-15, -8.74228e-08, -1, 0, 1, 0.8 )
 current = true
 far = 8192.0
 
@@ -28,3 +29,23 @@ far = 8192.0
 transform = Transform( -1, 8.74228e-08, -7.64274e-15, 8.74228e-08, 1, -8.74228e-08, -5.0822e-21, -8.74228e-08, -1, 0.438, -0.6, 0.136 )
 
 [node name="Assault" parent="Camera/WeaponPoint" instance=ExtResource( 2 )]
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoText" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_top = 428.132
+margin_right = 262.881
+margin_bottom = 564.132
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "hello"
+__meta__ = {
+"_edit_use_anchors_": false
+}
