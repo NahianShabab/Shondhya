@@ -33,6 +33,7 @@ func fire():
 				print(collider);
 		else:
 			pass
+		ray.enabled=false;
 		pass
 
 
